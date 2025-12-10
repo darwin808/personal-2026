@@ -18,7 +18,7 @@ const resume_link = "https://docs.google.com/document/d/1X-wXv4PuaIcVk-UrgMPfB2E
       {sortedExperiences.map((exp) => (
         <li class="mb-12">
           <div class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-            <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-gruvbox-bg1/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
+            <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition-all duration-300 motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-gruvbox-bg1/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(250,189,47,0.1)] lg:group-hover:drop-shadow-lg lg:group-hover:scale-[1.02]"></div>
 
             <header class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-gruvbox-gray sm:col-span-2" aria-label={exp.data.dateRange}>
               {exp.data.dateRange}
@@ -55,7 +55,7 @@ const resume_link = "https://docs.google.com/document/d/1X-wXv4PuaIcVk-UrgMPfB2E
               <ul class="mt-2 flex flex-wrap" aria-label="Technologies used">
                 {exp.data.technologies.map((tech) => (
                   <li class="mr-1.5 mt-2">
-                    <div class="flex items-center rounded-full bg-gruvbox-aqua/10 px-3 py-1 text-xs font-medium leading-5 text-gruvbox-aqua">
+                    <div class="flex items-center rounded-full bg-gruvbox-aqua/10 px-3 py-1 text-xs font-medium leading-5 text-gruvbox-aqua transition-all duration-200 hover:bg-gruvbox-aqua/20 hover:scale-105 hover:-translate-y-0.5 cursor-default">
                       {tech}
                     </div>
                   </li>
@@ -72,12 +72,12 @@ const resume_link = "https://docs.google.com/document/d/1X-wXv4PuaIcVk-UrgMPfB2E
           href={resume_link}
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex items-center font-medium leading-tight text-gruvbox-fg group hover:text-gruvbox-yellow focus-visible:text-gruvbox-yellow"
+        class="inline-flex items-center font-medium leading-tight text-gruvbox-fg group hover:text-gruvbox-yellow focus-visible:text-gruvbox-yellow transition-all duration-200"
       >
-        <span class="border-b border-transparent pb-px transition group-hover:border-gruvbox-yellow motion-reduce:transition-none">
+        <span class="border-b-2 border-transparent pb-px transition-all duration-200 group-hover:border-gruvbox-yellow group-hover:pb-1 motion-reduce:transition-none">
           View Full Resume
         </span>
-        <svg class="ml-1 inline-block h-4 w-4 shrink-0 -translate-y-px transition-transform group-hover:translate-x-2 group-focus-visible:translate-x-2 motion-reduce:transition-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+        <svg class="ml-1 inline-block h-4 w-4 shrink-0 -translate-y-px transition-all duration-200 group-hover:translate-x-2 group-hover:scale-110 group-focus-visible:translate-x-2 motion-reduce:transition-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
           <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"></path>
         </svg>
       </a>
