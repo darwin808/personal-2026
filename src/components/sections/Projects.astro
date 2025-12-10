@@ -5,6 +5,7 @@ const projects = await getCollection('projects');
 const featuredProjects = projects
   .filter((project) => project.data.featured)
   .sort((a, b) => a.data.order - b.data.order);
+const project_links = "https://github.com/darwin808"
 ---
 
 <section id="projects" class="mb-16 scroll-mt-16 lg:mb-24 lg:scroll-mt-24" aria-label="Selected projects">
@@ -69,7 +70,7 @@ const featuredProjects = projects
 
     <div class="mt-12">
       <a
-        href="/projects"
+          href={project_links}
         class="inline-flex items-center font-medium leading-tight text-gruvbox-fg group hover:text-gruvbox-yellow focus-visible:text-gruvbox-yellow"
       >
         <span class="border-b border-transparent pb-px transition group-hover:border-gruvbox-yellow motion-reduce:transition-none">
