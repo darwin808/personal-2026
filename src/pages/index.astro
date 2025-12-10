@@ -4,6 +4,7 @@ import About from '@components/sections/About.astro';
 import Experience from '@components/sections/Experience.astro';
 import Projects from '@components/sections/Projects.astro';
 import Writing from '@components/sections/Writing.astro';
+import ThemeToggle from '@components/ui/ThemeToggle.astro';
 import { SOCIAL_LINKS } from '@utils/constants';
 
 const pageTitle = 'Darwin Apolinario - Full-Stack Software Engineer & AI Developer';
@@ -12,6 +13,7 @@ const pageDescription =
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription}>
+  <ThemeToggle />
   <div class="mouse-glow"></div>
 
   <div class="lg:flex lg:justify-between lg:gap-4 max-w-screen-xl mx-auto">
@@ -112,7 +114,7 @@ const pageDescription =
 
       <footer class="mt-24 pb-16">
         <p class="text-sm text-gruvbox-fg3">
-          Built with <a href="https://astro.build" target="_blank" rel="noopener noreferrer" class="text-gruvbox-aqua hover:text-gruvbox-yellow transition-colors">Astro</a> and <a href="https://tailwindcss.com" target="_blank" rel="noopener noreferrer" class="text-gruvbox-aqua hover:text-gruvbox-yellow transition-colors">Tailwind CSS</a>. Inspired by <a href="https://brittanychiang.com" target="_blank" rel="noopener noreferrer" class="text-gruvbox-aqua hover:text-gruvbox-yellow transition-colors">Brittany Chiang</a>.
+          &copy; {new Date().getFullYear()} Darwin Apolinario. All rights reserved.
         </p>
       </footer>
     </main>

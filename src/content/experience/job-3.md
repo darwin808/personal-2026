@@ -7,10 +7,6 @@ technologies: ["React", "Next.js", "JavaScript", "Go", "REST APIs", "Headless CM
 order: 3
 ---
 
-Built and shipped highly interactive web applications for a leading headless CMS platform, enabling enterprise clients to manage content at scale.
+Shipped production features for a leading headless CMS platform, building interactive web applications that serve thousands of enterprise users. Developed with React, Next.js, and Go, creating reusable component libraries and RESTful APIs that power seamless content management at scale.
 
-- Developed and shipped production-ready features using React and Next.js, serving thousands of enterprise users
-- Maintained and enhanced the Zesty.io marketing website, implementing performance optimizations and SEO best practices
-- Created custom applications and reusable component libraries for daily client needs using modern JavaScript frameworks
-- Developed RESTful APIs using Go programming language to enable seamless communication between system components
-- Collaborated with product managers and designers to deliver user-centric features on tight deadlines
+Enhanced the Zesty.io marketing website with performance optimizations and SEO best practices. Collaborated closely with product and design teams to deliver user-centric features under tight deadlines, always focusing on code quality and scalability.

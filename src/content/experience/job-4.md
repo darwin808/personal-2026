@@ -7,10 +7,6 @@ technologies: ["React", "Redux", "Tailwind CSS", "JavaScript", "E-commerce"]
 order: 4
 ---
 
-Developed high-performance e-commerce web applications for a fintech payment solutions provider, focusing on user experience and conversion optimization.
+Built high-performance e-commerce platforms for a fintech payment provider, architecting interactive shopping experiences with React, Redux, and Tailwind CSS. Optimized checkout flows and responsive designs that significantly improved mobile conversion rates.
 
-- Architected and shipped interactive e-commerce platforms using React, Redux, and Tailwind CSS
-- Implemented responsive designs that increased mobile conversion rates by optimizing checkout flows
-- Worked with diverse tech stacks including various JavaScript frameworks and headless CMS platforms
-- Collaborated with backend teams to integrate payment gateways and third-party APIs
-- Ensured cross-browser compatibility and accessibility standards across all deliverables
+Integrated payment gateways and third-party APIs while ensuring cross-browser compatibility and accessibility standards. Collaborated with backend teams across diverse tech stacks to deliver seamless, conversion-focused user experiences.

@@ -1,0 +1,62 @@
+---
+---
+
+<button
+  id="theme-toggle"
+  type="button"
+  class="fixed top-6 right-6 z-50 p-3 rounded-lg bg-gruvbox-bg1 hover:bg-gruvbox-bg2 transition-colors border border-gruvbox-bg2"
+  aria-label="Toggle theme"
+>
+  <svg class="sun-icon w-5 h-5 text-gruvbox-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+  </svg>
+  <svg class="moon-icon hidden w-5 h-5 text-gruvbox-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+  </svg>
+</button>
+
+<script>
+  // Theme toggle functionality
+  const themeToggle = document.getElementById('theme-toggle');
+  const html = document.documentElement;
+  const sunIcon = themeToggle?.querySelector('.sun-icon');
+  const moonIcon = themeToggle?.querySelector('.moon-icon');
+
+  // Get theme from localStorage or default to dark
+  const getTheme = () => {
+    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+      return localStorage.getItem('theme');
+    }
+    return 'dark';
+  };
+
+  // Set theme
+  const setTheme = (theme: string) => {
+    if (theme === 'light') {
+      html.setAttribute('data-theme', 'light');
+      sunIcon?.classList.add('hidden');
+      moonIcon?.classList.remove('hidden');
+    } else {
+      html.removeAttribute('data-theme');
+      sunIcon?.classList.remove('hidden');
+      moonIcon?.classList.add('hidden');
+    }
+    localStorage.setItem('theme', theme);
+  };
+
+  // Initialize theme
+  setTheme(getTheme());
+
+  // Toggle theme on button click
+  themeToggle?.addEventListener('click', () => {
+    const currentTheme = html.getAttribute('data-theme');
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+  });
+</script>
+
+<style>
+  #theme-toggle {
+    backdrop-filter: blur(10px);
+  }
+</style>

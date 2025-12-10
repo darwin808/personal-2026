@@ -7,10 +7,6 @@ technologies: ["React", "Redux", "CSS", "JavaScript", "CMS Integration"]
 order: 5
 ---
 
-Engineered customer-facing web applications for a digital experience platform, delivering features used by major enterprise clients.
+Developed customer-facing features for Captivate Hub's digital experience platform, serving major enterprise clients with React, Redux, and CSS. Collaborated weekly with clients to gather requirements and provide technical expertise, ensuring solutions met real business needs.
 
-- Developed and maintained critical features for Captivate Hub's web application using React, Redux, and CSS
-- Collaborated with clients on a weekly basis, providing technical expertise and gathering requirements
-- Implemented responsive UI components following design specifications and accessibility guidelines
-- Optimized application performance and resolved production issues in a fast-paced environment
-- Contributed to code reviews and knowledge sharing within the engineering team
+Built responsive UI components following strict design specifications and accessibility guidelines. Optimized application performance and quickly resolved production issues in a fast-paced environment, while actively contributing to code reviews and team knowledge sharing.

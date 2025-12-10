@@ -7,10 +7,6 @@ technologies: ["React", "TypeScript", "Node.js", "Microservices", "Azure DevOps"
 order: 2
 ---
 
-Developed enterprise-grade banking solutions, focusing on scalable microservices architecture and cross-platform mobile applications for one of the Philippines' largest banks.
+Engineered enterprise banking solutions for one of the Philippines' largest financial institutions, focusing on scalable microservices architecture and cross-platform mobile development. Architected a microfrontend system that enabled modular, independent deployments across banking divisions.
 
-- Architected and integrated a scalable microfrontend system for the banking division, improving modularity and enabling independent team deployments
-- Engineered mobile applications using React Native, delivering responsive user experiences across iOS and Android platforms
-- Implemented comprehensive CI/CD pipelines in Azure DevOps, automating build, test, and deployment processes
-- Collaborated with design and product teams to translate complex banking requirements into intuitive, functional interfaces
-- Optimized application performance through code splitting, lazy loading, and efficient state management patterns
+Built React Native applications delivering seamless experiences on iOS and Android. Implemented comprehensive CI/CD pipelines in Azure DevOps and optimized performance through code splitting, lazy loading, and efficient state management—transforming complex banking requirements into intuitive, high-performing interfaces.
