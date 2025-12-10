@@ -1,12 +1,14 @@
 ---
-title: "Portfolio Builder"
-description: "A no-code portfolio builder allowing creatives to showcase their work with customizable templates and themes"
+title: "Captivate Hub - Conversational AI Platform"
+description: "Enterprise conversation orchestration platform integrating Digital Assistants, AI agents, IoT devices, and live support channels into unified customer experiences"
 image: "/images/projects/project-4.jpg"
-technologies: ["Astro", "Svelte", "TailwindCSS", "Supabase"]
-githubUrl: "https://github.com/darwinapolinario/portfolio-builder"
-liveUrl: "https://portfolio-builder.example.com"
-featured: false
+technologies: ["React", "Redux", "CSS", "WebSockets", "REST APIs", "Microservices"]
+githubUrl: "https://github.com/darwin808/captivate-hub"
+liveUrl: "https://captivate.com"
+featured: true
 order: 4
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Built critical components for a conversational AI architecture used by major enterprise clients. Implemented real-time message routing, intelligent agent assignment, and seamless handoff between automated and human support.
+
+Engineered WebSocket-based communication system handling thousands of concurrent conversations with <100ms latency, integrated with third-party CRM and analytics platforms.

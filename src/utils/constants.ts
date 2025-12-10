@@ -1,30 +1,30 @@
 export const SITE_METADATA = {
   title: 'Darwin Apolinario',
-  description: 'Darwin Apolinario is a software engineer specializing in building exceptional digital experiences.',
+  description: 'Full-Stack Software Engineer & AI Developer specializing in scalable web applications, cloud architecture, and intelligent systems.',
   author: 'Darwin Apolinario',
-  email: 'darwin@example.com',
+  email: 'darwinn.darwinn@gmail.com',
 };
 
 export const SOCIAL_LINKS = [
   {
     platform: 'GitHub',
-    url: 'https://github.com/darwinapolinario',
+    url: 'https://github.com/darwin808',
     icon: '/src/assets/icons/github.svg',
   },
   {
     platform: 'LinkedIn',
-    url: 'https://linkedin.com/in/darwinapolinario',
+    url: 'https://linkedin.com/in/darwin-apolinario',
     icon: '/src/assets/icons/linkedin.svg',
   },
   {
-    platform: 'CodePen',
-    url: 'https://codepen.io/darwinapolinario',
-    icon: '/src/assets/icons/codepen.svg',
+    platform: 'Email',
+    url: 'mailto:darwinn.darwinn@gmail.com',
+    icon: '/src/assets/icons/email.svg',
   },
   {
-    platform: 'Email',
-    url: 'mailto:darwin@example.com',
-    icon: '/src/assets/icons/email.svg',
+    platform: 'Website',
+    url: 'https://darwinapolinario.xyz',
+    icon: '/src/assets/icons/external.svg',
   },
 ];
 

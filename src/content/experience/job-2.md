@@ -1,15 +1,16 @@
 ---
-company: "Digital Solutions Ltd"
-position: "Full Stack Developer"
-dateRange: "Mar 2021 - Dec 2022"
-url: "https://digitalsolutions.example.com"
-technologies: ["Vue.js", "Python", "Django", "MongoDB", "AWS"]
+company: "Metrobank"
+position: "Senior Software Developer"
+dateRange: "May 2023 - Oct 2024"
+url: "https://www.metrobank.com.ph"
+technologies: ["React", "TypeScript", "Node.js", "Microservices", "Azure DevOps", "Docker", "MongoDB"]
 order: 2
 ---
 
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Developed enterprise-grade banking solutions, focusing on scalable microservices architecture and cross-platform mobile applications for one of the Philippines' largest banks.
 
-- Built and maintained customer-facing web applications used by 100K+ users
-- Implemented CI/CD pipelines reducing deployment time by 60%
-- Optimized database queries resulting in 3x performance improvement
-- Led migration from monolithic architecture to microservices
+- Architected and integrated a scalable microfrontend system for the banking division, improving modularity and enabling independent team deployments
+- Engineered mobile applications using React Native, delivering responsive user experiences across iOS and Android platforms
+- Implemented comprehensive CI/CD pipelines in Azure DevOps, automating build, test, and deployment processes
+- Collaborated with design and product teams to translate complex banking requirements into intuitive, functional interfaces
+- Optimized application performance through code splitting, lazy loading, and efficient state management patterns

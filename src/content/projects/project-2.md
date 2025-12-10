@@ -1,14 +1,14 @@
 ---
-title: "Task Management Dashboard"
-description: "An intuitive task management application with drag-and-drop functionality, real-time collaboration, and analytics"
+title: "Qalala World - E-Learning Platform"
+description: "Comprehensive web e-commerce application for parents' educational needs, featuring course management, payment processing, and real-time inventory tracking"
 image: "/images/projects/project-2.jpg"
-technologies: ["React", "Firebase", "Material-UI", "Chart.js"]
-githubUrl: "https://github.com/darwinapolinario/task-dashboard"
-liveUrl: "https://tasks-demo.example.com"
+technologies: ["React", "Redux", "Node.js", "Stripe", "MongoDB", "AWS S3"]
+githubUrl: "https://github.com/darwin808/qalala-world"
+liveUrl: "https://qalalaworld.com"
 featured: true
 order: 2
 ---
 
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+A full-stack e-learning and e-commerce platform serving thousands of parents, combining educational content delivery with seamless shopping experiences. Implemented advanced search algorithms, personalized recommendations, and secure payment processing.
 
-At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati.
+Architected for scalability using microservices, with CDN integration for global content delivery and Redis caching for optimal performance.

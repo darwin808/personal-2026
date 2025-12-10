@@ -1,15 +1,16 @@
 ---
-company: "TechCorp Industries"
-position: "Senior Software Engineer"
-dateRange: "Jan 2023 - Present"
-url: "https://techcorp.example.com"
-technologies: ["JavaScript", "TypeScript", "React", "Node.js", "PostgreSQL"]
+company: "Freelance"
+position: "Full-Stack Software Engineer & AI Developer"
+dateRange: "Nov 2024 - Present"
+url: "https://darwinapolinario.xyz"
+technologies: ["TypeScript", "Next.js", "React", "Node.js", "AWS", "OpenAI API", "Vercel", "Tailwind CSS"]
 order: 1
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Architect and develop custom web applications for clients, specializing in AI-powered solutions and cloud-native architectures. Deliver end-to-end solutions from system design to deployment.
 
-- Architected and implemented scalable microservices handling millions of requests daily
-- Collaborated with cross-functional teams to deliver high-impact features
-- Mentored junior developers and established best practices for code quality
-- Reduced technical debt by 40% through systematic refactoring initiatives
+- Built intelligent web applications integrating LLM capabilities (GPT-4, Claude) for automated content generation and natural language processing
+- Designed and implemented cloud-based solutions leveraging AWS services (Lambda, S3, DynamoDB, CloudFront) for scalability and performance
+- Developed modern full-stack applications using Next.js 14+, TypeScript, and serverless architecture
+- Implemented CI/CD pipelines with GitHub Actions and Vercel for automated testing and deployment
+- Created responsive, accessible interfaces following WCAG 2.1 AA standards using Tailwind CSS and modern React patterns

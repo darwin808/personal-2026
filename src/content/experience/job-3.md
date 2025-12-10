@@ -1,15 +1,16 @@
 ---
-company: "StartupHub Inc"
-position: "Frontend Developer"
-dateRange: "Jun 2019 - Feb 2021"
-url: "https://startuphub.example.com"
-technologies: ["React", "Redux", "Sass", "Webpack", "Jest"]
+company: "Zesty.io"
+position: "Software Developer"
+dateRange: "Mar 2022 - Apr 2023"
+url: "https://www.zesty.io"
+technologies: ["React", "Next.js", "JavaScript", "Go", "REST APIs", "Headless CMS"]
 order: 3
 ---
 
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+Built and shipped highly interactive web applications for a leading headless CMS platform, enabling enterprise clients to manage content at scale.
 
-- Developed responsive, accessible user interfaces following WCAG guidelines
-- Improved application performance achieving 95+ Lighthouse scores
-- Integrated third-party APIs and payment processing systems
-- Created comprehensive unit and integration test suites
+- Developed and shipped production-ready features using React and Next.js, serving thousands of enterprise users
+- Maintained and enhanced the Zesty.io marketing website, implementing performance optimizations and SEO best practices
+- Created custom applications and reusable component libraries for daily client needs using modern JavaScript frameworks
+- Developed RESTful APIs using Go programming language to enable seamless communication between system components
+- Collaborated with product managers and designers to deliver user-centric features on tight deadlines
