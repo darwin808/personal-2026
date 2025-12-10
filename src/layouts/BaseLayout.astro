@@ -4,11 +4,18 @@ import '../styles/global.css';
 interface Props {
   title?: string;
   description?: string;
+  keywords?: string;
+  ogImage?: string;
+  article?: boolean;
 }
 
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const {
-  title = 'Darwin Apolinario - Full-Stack Software Engineer & AI Developer',
-  description = 'Full-Stack Software Engineer specializing in AI-powered applications, cloud architecture, and scalable web solutions. Expert in TypeScript, React, Node.js, and modern DevOps.',
+  title = 'Darwin Apolinario - Full-Stack Software Engineer, AI Developer & Tech Expert',
+  description = 'Darwin Apolinario: Full-Stack Software Engineer specializing in AI/ML, LLM integration, React, TypeScript, Node.js, Rust. Building intelligent applications with OpenAI, Claude API, AWS. Tech expertise in microservices, cloud architecture, and modern web development.',
+  keywords = 'Darwin Apolinario, Full-Stack Developer, AI Developer, Software Engineer, Machine Learning, LLM, GPT-4, Claude API, React Developer, TypeScript, Node.js, Rust Developer, Web Development, Cloud Architecture, AWS, Azure, Microservices, Tech Stack, Programming, Developer Portfolio, AI Integration, OpenAI, Anthropic, Next.js, React Native, Docker, Kubernetes, DevOps, Tech Expert, Software Architecture',
+  ogImage = 'https://darwinapolinario.xyz/og-image.jpg',
+  article = false,
 } = Astro.props;
 ---
 
@@ -17,24 +24,96 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content={description} />
-    <meta name="author" content="Darwin Apolinario" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <!-- Open Graph -->
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="Darwin Apolinario" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={article ? 'article' : 'website'} />
+    <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Darwin Apolinario" />
 
-    <!-- Fonts -->
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:creator" content="@darwin808" />
+
+    <!-- Additional SEO -->
+    <meta name="theme-color" content="#1d2021" />
+    <meta name="color-scheme" content="dark light" />
+    <link rel="alternate" hreflang="en" href={canonicalURL} />
+
+    <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Fonts with display swap for performance -->
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
       rel="stylesheet"
     />
 
+    <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <title>{title}</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Darwin Apolinario",
+      "url": "https://darwinapolinario.xyz",
+      "image": "https://darwinapolinario.xyz/og-image.jpg",
+      "sameAs": [
+        "https://github.com/darwin808",
+        "https://www.linkedin.com/in/darwin-apolinario-35b084114/"
+      ],
+      "jobTitle": "Full-Stack Software Engineer & AI Developer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Freelance"
+      },
+      "description": "Full-Stack Software Engineer specializing in AI/ML, LLM integration, cloud architecture, and modern web development",
+      "knowsAbout": [
+        "Artificial Intelligence",
+        "Machine Learning",
+        "Full-Stack Development",
+        "React",
+        "TypeScript",
+        "Node.js",
+        "Rust",
+        "Cloud Architecture",
+        "AWS",
+        "Docker",
+        "Kubernetes",
+        "Microservices",
+        "AI Integration",
+        "LLM",
+        "GPT-4",
+        "Software Engineering"
+      ],
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Technological Institute of the Philippines"
+      }
+    })} />
   </head>
   <body>
     <a href="#content" class="skip-to-content">Skip to content</a>
