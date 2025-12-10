@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 
 const experiences = await getCollection('experience');
 const sortedExperiences = experiences.sort((a, b) => a.data.order - b.data.order);
+const resume_link = "https://docs.google.com/document/d/1X-wXv4PuaIcVk-UrgMPfB2EYklXfJAbcjCe4mg3dKFc/edit?usp=sharing"
 ---
 
 <section id="experience" class="mb-16 scroll-mt-16 lg:mb-24 lg:scroll-mt-24" aria-label="Work experience">
@@ -68,7 +69,7 @@ const sortedExperiences = experiences.sort((a, b) => a.data.order - b.data.order
 
     <div class="mt-12">
       <a
-        href="/resume.pdf"
+          href={resume_link}
         target="_blank"
         rel="noopener noreferrer"
         class="inline-flex items-center font-medium leading-tight text-gruvbox-fg group hover:text-gruvbox-yellow focus-visible:text-gruvbox-yellow"
