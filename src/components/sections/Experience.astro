@@ -47,9 +47,9 @@ const sortedExperiences = experiences.sort((a, b) => a.data.order - b.data.order
                 </div>
               </h3>
 
-              <p class="mt-2 text-sm leading-normal text-gruvbox-fg3">
-                {exp.body}
-              </p>
+              <div class="mt-2 text-sm leading-normal text-gruvbox-fg3 space-y-2">
+                <p set:html={exp.body.replace(/\n\n/g, '</p><p class="mt-2">')} />
+              </div>
 
               <ul class="mt-2 flex flex-wrap" aria-label="Technologies used">
                 {exp.data.technologies.map((tech) => (

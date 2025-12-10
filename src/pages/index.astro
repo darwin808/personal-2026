@@ -3,7 +3,6 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 import About from '@components/sections/About.astro';
 import Experience from '@components/sections/Experience.astro';
 import Projects from '@components/sections/Projects.astro';
-import Writing from '@components/sections/Writing.astro';
 import ThemeToggle from '@components/ui/ThemeToggle.astro';
 import { SOCIAL_LINKS } from '@utils/constants';
 
@@ -18,7 +17,7 @@ const pageDescription =
 
   <div class="lg:flex lg:justify-between lg:gap-4 max-w-screen-xl mx-auto">
     <!-- Left Sidebar - Sticky -->
-    <header class="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24 px-6 lg:px-12 py-12">
+    <header class="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:pt-34 lg:pb-24 px-6 lg:px-12 py-12">
       <div>
         <h1 class="text-4xl font-bold tracking-tight text-gruvbox-fg0 sm:text-5xl">
           Darwin Apolinario
@@ -49,12 +48,6 @@ const pageDescription =
               <a class="group flex items-center py-3" href="#projects">
                 <span class="nav-indicator mr-4 h-px w-8 bg-gruvbox-gray transition-all group-hover:w-16 group-hover:bg-gruvbox-yellow"></span>
                 <span class="nav-text text-xs font-bold uppercase tracking-widest text-gruvbox-gray group-hover:text-gruvbox-yellow">Projects</span>
-              </a>
-            </li>
-            <li>
-              <a class="group flex items-center py-3" href="#writing">
-                <span class="nav-indicator mr-4 h-px w-8 bg-gruvbox-gray transition-all group-hover:w-16 group-hover:bg-gruvbox-yellow"></span>
-                <span class="nav-text text-xs font-bold uppercase tracking-widest text-gruvbox-gray group-hover:text-gruvbox-yellow">Writing</span>
               </a>
             </li>
           </ul>
@@ -106,11 +99,10 @@ const pageDescription =
     </header>
 
     <!-- Right Content - Scrollable -->
-    <main id="content" class="lg:w-1/2 lg:py-24 px-6 lg:px-12">
+    <main id="content" class="lg:w-1/2 lg:py-8 px-6 lg:px-12">
       <About />
       <Experience />
       <Projects />
-      <Writing />
 
       <footer class="mt-24 pb-16">
         <p class="text-sm text-gruvbox-fg3">
@@ -131,6 +123,14 @@ const pageDescription =
     height: 100%;
     z-index: 30;
     transition: opacity 0.3s;
+    mix-blend-mode: screen;
+  }
+
+  @media (prefers-color-scheme: light) {
+    .mouse-glow {
+      mix-blend-mode: multiply;
+      opacity: 0.6;
+    }
   }
 
   .nav-indicator {
@@ -160,7 +160,7 @@ const pageDescription =
     const y = e.clientY;
 
     if (mouseGlow) {
-      mouseGlow.style.background = `radial-gradient(600px circle at ${x}px ${y}px, rgba(250, 189, 47, 0.1), transparent 40%)`;
+      mouseGlow.style.background = `radial-gradient(800px circle at ${x}px ${y}px, rgba(250, 189, 47, 0.15), rgba(250, 189, 47, 0.05) 40%, transparent 80%)`;
     }
   });
 

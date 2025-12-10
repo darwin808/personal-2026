@@ -143,3 +143,97 @@ section {
 .link-underline:hover::after {
   @apply w-full;
 }
+
+/* Prose styles for blog posts */
+.prose-gruvbox {
+  @apply text-gruvbox-fg2 leading-relaxed;
+  max-width: 75ch;
+}
+
+.prose-gruvbox h1 {
+  @apply text-gruvbox-fg0 text-4xl font-bold mt-12 mb-6 leading-tight;
+}
+
+.prose-gruvbox h2 {
+  @apply text-gruvbox-fg0 text-3xl font-bold mt-10 mb-4 leading-tight;
+}
+
+.prose-gruvbox h3 {
+  @apply text-gruvbox-fg0 text-2xl font-bold mt-8 mb-3;
+}
+
+.prose-gruvbox h4 {
+  @apply text-gruvbox-fg0 text-xl font-semibold mt-6 mb-2;
+}
+
+.prose-gruvbox p {
+  @apply mb-6 text-gruvbox-fg2 leading-relaxed;
+}
+
+.prose-gruvbox a {
+  @apply text-gruvbox-blue hover:text-gruvbox-aqua underline decoration-gruvbox-blue/30 hover:decoration-gruvbox-aqua transition-colors;
+}
+
+.prose-gruvbox strong {
+  @apply text-gruvbox-fg0 font-semibold;
+}
+
+.prose-gruvbox em {
+  @apply text-gruvbox-purple italic;
+}
+
+.prose-gruvbox code {
+  @apply bg-gruvbox-bg1 text-gruvbox-aqua px-2 py-1 rounded text-sm font-mono;
+}
+
+.prose-gruvbox pre {
+  @apply bg-gruvbox-bg0 border border-gruvbox-bg1 rounded-lg p-4 overflow-x-auto my-6;
+}
+
+.prose-gruvbox pre code {
+  @apply bg-transparent p-0 text-gruvbox-fg2;
+}
+
+.prose-gruvbox ul, .prose-gruvbox ol {
+  @apply mb-6 pl-6;
+}
+
+.prose-gruvbox ul {
+  @apply list-disc;
+}
+
+.prose-gruvbox ol {
+  @apply list-decimal;
+}
+
+.prose-gruvbox li {
+  @apply mb-2 text-gruvbox-fg2;
+}
+
+.prose-gruvbox li::marker {
+  @apply text-gruvbox-yellow;
+}
+
+.prose-gruvbox blockquote {
+  @apply border-l-4 border-gruvbox-yellow pl-4 py-2 my-6 italic text-gruvbox-fg3 bg-gruvbox-bg1 rounded-r;
+}
+
+.prose-gruvbox img {
+  @apply rounded-lg my-8 w-full;
+}
+
+.prose-gruvbox hr {
+  @apply border-gruvbox-bg2 my-8;
+}
+
+.prose-gruvbox table {
+  @apply w-full my-6 border-collapse;
+}
+
+.prose-gruvbox th {
+  @apply bg-gruvbox-bg1 text-gruvbox-fg0 font-semibold p-3 text-left border border-gruvbox-bg2;
+}
+
+.prose-gruvbox td {
+  @apply p-3 border border-gruvbox-bg2 text-gruvbox-fg2;
+}
