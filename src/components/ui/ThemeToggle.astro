@@ -30,6 +30,14 @@
     return 'dark';
   };
 
+  // Update favicon based on theme
+  const updateFavicon = (theme: string) => {
+    const favicon = document.querySelector('link[rel="icon"]') as HTMLLinkElement;
+    if (favicon) {
+      favicon.href = theme === 'light' ? '/favicon-light.svg' : '/favicon-dark.svg';
+    }
+  };
+
   // Set theme
   const setTheme = (theme: string) => {
     if (theme === 'light') {
@@ -42,6 +50,7 @@
       moonIcon?.classList.add('hidden');
     }
     localStorage.setItem('theme', theme);
+    updateFavicon(theme);
   };
 
   // Initialize theme
