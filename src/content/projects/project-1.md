@@ -1,14 +1,13 @@
 ---
-title: "AI-Powered Content Generator"
-description: "An intelligent content creation platform leveraging GPT-4 and Claude API for automated blog posts, social media content, and marketing copy with brand voice consistency"
+title: "site2chat"
+description: "A proof-of-concept system that scrapes websites and allows you to ask questions about the content using local LLMs via Ollama"
 image: "/images/projects/project-1.jpg"
-technologies: ["Next.js 14", "TypeScript", "OpenAI API", "Anthropic Claude", "Vercel AI SDK", "Tailwind CSS", "PostgreSQL"]
-githubUrl: "https://github.com/darwin808/ai-content-gen"
-liveUrl: "https://ai-content-gen.vercel.app"
+technologies: ["TypeScript", "Ollama", "LLM", "Web Scraping", "RAG"]
+githubUrl: "https://github.com/darwin808/site2chat"
 featured: true
 order: 1
 ---
 
-A production-ready SaaS application that combines multiple LLM providers to generate high-quality, brand-consistent content. Features real-time streaming responses, prompt engineering optimization, and intelligent content scheduling.
+An intelligent web scraping tool that transforms any website into an interactive Q&A system. Leverages local LLM models through Ollama for privacy-focused document querying without relying on cloud APIs.
 
-Built with modern serverless architecture on Vercel Edge Functions, achieving sub-200ms response times globally. Implements advanced RAG (Retrieval-Augmented Generation) for context-aware content creation.
+Built as a proof-of-concept for RAG (Retrieval-Augmented Generation) implementations, enabling natural language queries over scraped web content with complete data sovereignty.

@@ -1,14 +1,13 @@
 ---
-title: "Captivate Hub - Conversational AI Platform"
-description: "Enterprise conversation orchestration platform integrating Digital Assistants, AI agents, IoT devices, and live support channels into unified customer experiences"
+title: "ultra-fast-uri"
+description: "Ultra-fast URI parser written in pure JavaScript. Optimized for maximum performance while maintaining full compatibility with the URI specification"
 image: "/images/projects/project-4.jpg"
-technologies: ["React", "Redux", "CSS", "WebSockets", "REST APIs", "Microservices"]
-githubUrl: "https://github.com/darwin808/captivate-hub"
-liveUrl: "https://captivate.com"
+technologies: ["JavaScript", "Performance Optimization", "Parser Development", "Algorithm Design"]
+githubUrl: "https://github.com/darwin808/ultra-fast-uri"
 featured: true
 order: 4
 ---
 
-Built critical components for a conversational AI architecture used by major enterprise clients. Implemented real-time message routing, intelligent agent assignment, and seamless handoff between automated and human support.
+A high-performance URI parser built from scratch in pure JavaScript, designed to handle URI parsing at scale with minimal overhead. Benchmarked against popular libraries with significant performance improvements.
 
-Engineered WebSocket-based communication system handling thousands of concurrent conversations with <100ms latency, integrated with third-party CRM and analytics platforms.
+Implements optimized parsing algorithms while maintaining full spec compliance. Perfect for high-throughput applications, API gateways, and any system requiring millions of URI operations per second.

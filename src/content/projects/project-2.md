@@ -1,14 +1,13 @@
 ---
-title: "Qalala World - E-Learning Platform"
-description: "Comprehensive web e-commerce application for parents' educational needs, featuring course management, payment processing, and real-time inventory tracking"
+title: "DocuChat"
+description: "An intelligent document assistant enabling conversations with PDF files through question-answering functionality"
 image: "/images/projects/project-2.jpg"
-technologies: ["React", "Redux", "Node.js", "Stripe", "MongoDB", "AWS S3"]
-githubUrl: "https://github.com/darwin808/qalala-world"
-liveUrl: "https://qalalaworld.com"
+technologies: ["JavaScript", "LLM", "PDF Processing", "AI", "Natural Language Processing"]
+githubUrl: "https://github.com/darwin808/DocuChat"
 featured: true
 order: 2
 ---
 
-A full-stack e-learning and e-commerce platform serving thousands of parents, combining educational content delivery with seamless shopping experiences. Implemented advanced search algorithms, personalized recommendations, and secure payment processing.
+A smart document interaction tool that allows users to chat with PDF files using natural language. Ask questions about document content and receive accurate, context-aware answers powered by advanced language models.
 
-Architected for scalability using microservices, with CDN integration for global content delivery and Redis caching for optimal performance.
+Perfect for quickly extracting insights from lengthy documents, research papers, or technical manuals without reading through entire files. Implements intelligent chunking and semantic search for precise answer retrieval.

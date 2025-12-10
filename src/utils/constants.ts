@@ -2,7 +2,7 @@ export const SITE_METADATA = {
   title: 'Darwin Apolinario',
   description: 'Full-Stack Software Engineer & AI Developer specializing in scalable web applications, cloud architecture, and intelligent systems.',
   author: 'Darwin Apolinario',
-  email: 'darwinn.darwinn@gmail.com',
+  email: 'darwinnn.darwinnn@gmail.com',
 };
 
 export const SOCIAL_LINKS = [
@@ -13,12 +13,12 @@ export const SOCIAL_LINKS = [
   },
   {
     platform: 'LinkedIn',
-    url: 'https://linkedin.com/in/darwin-apolinario',
+    url: 'https://www.linkedin.com/in/darwin-apolinario-35b084114/',
     icon: '/src/assets/icons/linkedin.svg',
   },
   {
     platform: 'Email',
-    url: 'mailto:darwinn.darwinn@gmail.com',
+    url: 'mailto:darwinnn.darwinnn@gmail.com',
     icon: '/src/assets/icons/email.svg',
   },
   {

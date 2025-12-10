@@ -1,13 +1,13 @@
 ---
-title: "Lasalle Greenhills School Portal"
-description: "Enterprise school management system with student credentials management, attendance tracking, grade reporting, and parent-teacher communication features"
+title: "pino-rs"
+description: "A blazingly fast Rust implementation of the pino.js logger. Built for performance while maintaining full API compatibility with pino.js, making it a true drop-in replacement"
 image: "/images/projects/project-3.jpg"
-technologies: ["React", "TypeScript", "Node.js", "PostgreSQL", "Express", "Socket.io"]
-githubUrl: "https://github.com/darwin808/lsgh-portal"
+technologies: ["Rust", "Performance Optimization", "Logging", "Systems Programming"]
+githubUrl: "https://github.com/darwin808/pino-rs"
 featured: true
 order: 3
 ---
 
-A comprehensive school management platform used by faculty, students, and parents for real-time academic tracking and communication. Features include automated grade calculations, attendance monitoring, and secure document management.
+A high-performance logger reimagined in Rust, offering the same familiar API as pino.js with dramatically improved speed and reduced memory footprint. Designed as a drop-in replacement for performance-critical applications.
 
-Implemented role-based access control, real-time notifications using WebSockets, and generated detailed analytics dashboards for administrative insights.
+Leverages Rust's zero-cost abstractions and memory safety guarantees to deliver production-grade logging with minimal overhead. Ideal for microservices and high-throughput systems requiring reliable, fast logging.
