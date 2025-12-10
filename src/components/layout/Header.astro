@@ -1,0 +1,42 @@
+---
+import { NAV_LINKS, SOCIAL_LINKS } from '@utils/constants';
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-gruvbox-bg/80 backdrop-blur-md border-b border-gruvbox-bg1">
+  <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="/" class="text-gruvbox-fg0 font-bold text-xl hover:text-gruvbox-yellow transition-colors">
+      DA
+    </a>
+
+    <div class="hidden md:flex items-center gap-8">
+      {
+        NAV_LINKS.map((link, index) => (
+          <a
+            href={link.href}
+            class="text-gruvbox-fg2 hover:text-gruvbox-yellow transition-colors font-mono text-sm"
+          >
+            <span class="text-gruvbox-yellow">0{index + 1}.</span> {link.name}
+          </a>
+        ))
+      }
+    </div>
+
+    <div class="flex items-center gap-4">
+      {
+        SOCIAL_LINKS.slice(0, 3).map((social) => (
+          <a
+            href={social.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-gruvbox-fg2 hover:text-gruvbox-yellow transition-colors w-5 h-5"
+            aria-label={social.platform}
+          >
+            <svg class="w-full h-full">
+              <use href={`${social.icon.replace('/src/assets', '')}#icon`} />
+            </svg>
+          </a>
+        ))
+      }
+    </div>
+  </nav>
+</header>

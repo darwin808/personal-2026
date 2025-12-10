@@ -1,0 +1,41 @@
+---
+interface Props {
+  title: string;
+  date: Date;
+  description: string;
+  readTime: string;
+  url: string;
+}
+
+const { title, date, description, readTime, url } = Astro.props;
+
+const formattedDate = date.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric',
+});
+---
+
+<a
+  href={url}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="group block p-6 rounded-lg hover:bg-gruvbox-bg1/30 transition-all duration-300 border-l-2 border-transparent hover:border-gruvbox-purple"
+>
+  <div class="flex items-center gap-4 text-gruvbox-gray text-sm font-mono mb-2">
+    <time datetime={date.toISOString()}>{formattedDate}</time>
+    <span>&bull;</span>
+    <span>{readTime}</span>
+  </div>
+
+  <h3 class="text-gruvbox-fg0 text-xl font-bold mb-2 group-hover:text-gruvbox-purple transition-colors inline-flex items-center gap-2">
+    {title}
+    <svg class="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+      <polyline points="15 3 21 3 21 9"></polyline>
+      <line x1="10" y1="14" x2="21" y2="3"></line>
+    </svg>
+  </h3>
+
+  <p class="text-gruvbox-fg2">{description}</p>
+</a>

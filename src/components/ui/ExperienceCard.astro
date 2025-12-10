@@ -1,0 +1,57 @@
+---
+interface Props {
+  company: string;
+  position: string;
+  dateRange: string;
+  description: string;
+  technologies: string[];
+  url?: string;
+}
+
+const { company, position, dateRange, description, technologies, url } = Astro.props;
+---
+
+<div class="group mb-12 grid grid-cols-1 md:grid-cols-4 gap-4 hover:bg-gruvbox-bg1/30 p-6 rounded-lg transition-all duration-300">
+  <div class="md:col-span-1">
+    <p class="text-gruvbox-gray text-sm font-mono uppercase tracking-wide mb-2">
+      {dateRange}
+    </p>
+  </div>
+
+  <div class="md:col-span-3">
+    <h3 class="text-gruvbox-fg0 text-lg font-bold mb-1">
+      {position}
+    </h3>
+    {
+      url ? (
+        <a
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-gruvbox-yellow hover:text-gruvbox-orange transition-colors inline-flex items-center gap-1 mb-3"
+        >
+          {company}
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+        </a>
+      ) : (
+        <p class="text-gruvbox-yellow mb-3">{company}</p>
+      )
+    }
+
+    <div class="text-gruvbox-fg2 mb-4 prose prose-sm" set:html={description} />
+
+    <div class="flex flex-wrap gap-2">
+      {
+        technologies.map((tech) => (
+          <span class="bg-gruvbox-bg1 text-gruvbox-aqua px-3 py-1 rounded-full text-xs font-mono">
+            {tech}
+          </span>
+        ))
+      }
+    </div>
+  </div>
+</div>

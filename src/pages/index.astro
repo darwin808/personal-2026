@@ -1,0 +1,187 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import About from '@components/sections/About.astro';
+import Experience from '@components/sections/Experience.astro';
+import Projects from '@components/sections/Projects.astro';
+import Writing from '@components/sections/Writing.astro';
+import { SOCIAL_LINKS } from '@utils/constants';
+
+const pageTitle = 'Darwin Apolinario - Software Engineer';
+const pageDescription =
+  'Darwin Apolinario is a software engineer specializing in building exceptional digital experiences.';
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <div class="mouse-glow"></div>
+
+  <div class="lg:flex lg:justify-between lg:gap-4 max-w-screen-xl mx-auto">
+    <!-- Left Sidebar - Sticky -->
+    <header class="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24 px-6 lg:px-12 py-12">
+      <div>
+        <h1 class="text-4xl font-bold tracking-tight text-gruvbox-fg0 sm:text-5xl">
+          Darwin Apolinario
+        </h1>
+        <h2 class="mt-3 text-lg font-medium tracking-tight text-gruvbox-fg sm:text-xl">
+          Software Engineer
+        </h2>
+        <p class="mt-4 max-w-xs leading-normal text-gruvbox-fg3">
+          I build accessible, pixel-perfect digital experiences for the web.
+        </p>
+
+        <!-- Navigation -->
+        <nav class="nav hidden lg:block mt-16" aria-label="In-page jump links">
+          <ul class="w-max">
+            <li>
+              <a class="group flex items-center py-3" href="#about">
+                <span class="nav-indicator mr-4 h-px w-8 bg-gruvbox-gray transition-all group-hover:w-16 group-hover:bg-gruvbox-yellow"></span>
+                <span class="nav-text text-xs font-bold uppercase tracking-widest text-gruvbox-gray group-hover:text-gruvbox-yellow">About</span>
+              </a>
+            </li>
+            <li>
+              <a class="group flex items-center py-3" href="#experience">
+                <span class="nav-indicator mr-4 h-px w-8 bg-gruvbox-gray transition-all group-hover:w-16 group-hover:bg-gruvbox-yellow"></span>
+                <span class="nav-text text-xs font-bold uppercase tracking-widest text-gruvbox-gray group-hover:text-gruvbox-yellow">Experience</span>
+              </a>
+            </li>
+            <li>
+              <a class="group flex items-center py-3" href="#projects">
+                <span class="nav-indicator mr-4 h-px w-8 bg-gruvbox-gray transition-all group-hover:w-16 group-hover:bg-gruvbox-yellow"></span>
+                <span class="nav-text text-xs font-bold uppercase tracking-widest text-gruvbox-gray group-hover:text-gruvbox-yellow">Projects</span>
+              </a>
+            </li>
+            <li>
+              <a class="group flex items-center py-3" href="#writing">
+                <span class="nav-indicator mr-4 h-px w-8 bg-gruvbox-gray transition-all group-hover:w-16 group-hover:bg-gruvbox-yellow"></span>
+                <span class="nav-text text-xs font-bold uppercase tracking-widest text-gruvbox-gray group-hover:text-gruvbox-yellow">Writing</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Social Links -->
+      <ul class="mt-8 flex items-center gap-5" aria-label="Social media">
+        {SOCIAL_LINKS.map((social) => (
+          <li class="text-xs">
+            <a
+              href={social.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="block text-gruvbox-fg3 hover:text-gruvbox-yellow transition-colors"
+              aria-label={social.platform}
+            >
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                {social.platform === 'GitHub' && (
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                )}
+                {social.platform === 'LinkedIn' && (
+                  <>
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect x="2" y="9" width="4" height="12"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                  </>
+                )}
+                {social.platform === 'CodePen' && (
+                  <>
+                    <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"></polygon>
+                    <line x1="12" y1="22" x2="12" y2="15.5"></line>
+                    <polyline points="22 8.5 12 15.5 2 8.5"></polyline>
+                    <polyline points="2 15.5 12 8.5 22 15.5"></polyline>
+                    <line x1="12" y1="2" x2="12" y2="8.5"></line>
+                  </>
+                )}
+                {social.platform === 'Email' && (
+                  <>
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </>
+                )}
+              </svg>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </header>
+
+    <!-- Right Content - Scrollable -->
+    <main id="content" class="lg:w-1/2 lg:py-24 px-6 lg:px-12">
+      <About />
+      <Experience />
+      <Projects />
+      <Writing />
+
+      <footer class="mt-24 pb-16">
+        <p class="text-sm text-gruvbox-fg3">
+          Built with <a href="https://astro.build" target="_blank" rel="noopener noreferrer" class="text-gruvbox-aqua hover:text-gruvbox-yellow transition-colors">Astro</a> and <a href="https://tailwindcss.com" target="_blank" rel="noopener noreferrer" class="text-gruvbox-aqua hover:text-gruvbox-yellow transition-colors">Tailwind CSS</a>. Inspired by <a href="https://brittanychiang.com" target="_blank" rel="noopener noreferrer" class="text-gruvbox-aqua hover:text-gruvbox-yellow transition-colors">Brittany Chiang</a>.
+        </p>
+      </footer>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .mouse-glow {
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 30;
+    transition: opacity 0.3s;
+  }
+
+  .nav-indicator {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .nav-text {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  a.active .nav-indicator {
+    width: 4rem;
+    background-color: #fabd2f;
+  }
+
+  a.active .nav-text {
+    color: #fabd2f;
+  }
+</style>
+
+<script>
+  // Mouse glow effect
+  const mouseGlow = document.querySelector('.mouse-glow') as HTMLElement;
+
+  document.addEventListener('mousemove', (e) => {
+    const x = e.clientX;
+    const y = e.clientY;
+
+    if (mouseGlow) {
+      mouseGlow.style.background = `radial-gradient(600px circle at ${x}px ${y}px, rgba(250, 189, 47, 0.1), transparent 40%)`;
+    }
+  });
+
+  // Active nav on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      if (window.scrollY >= sectionTop - 200) {
+        current = section.getAttribute('id') || '';
+      }
+    });
+
+    navLinks.forEach((link) => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${current}`) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>

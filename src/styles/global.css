@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gruvbox-bg: #1d2021;
+  --color-gruvbox-bg0: #282828;
+  --color-gruvbox-bg1: #3c3836;
+  --color-gruvbox-bg2: #504945;
+  --color-gruvbox-bg3: #665c54;
+  --color-gruvbox-fg: #ebdbb2;
+  --color-gruvbox-fg0: #fbf1c7;
+  --color-gruvbox-fg2: #d5c4a1;
+  --color-gruvbox-fg3: #bdae93;
+  --color-gruvbox-fg4: #a89984;
+  --color-gruvbox-gray: #928374;
+  --color-gruvbox-red: #fb4934;
+  --color-gruvbox-green: #b8bb26;
+  --color-gruvbox-yellow: #fabd2f;
+  --color-gruvbox-blue: #83a598;
+  --color-gruvbox-purple: #d3869b;
+  --color-gruvbox-aqua: #8ec07c;
+  --color-gruvbox-orange: #fe8019;
+
+  --font-family-sans: 'Inter', system-ui, sans-serif;
+  --font-family-mono: 'Fira Code', Monaco, 'Courier New', monospace;
+
+  --max-width-container: 1200px;
+  --max-width-content: 900px;
+
+  --spacing-section: 100px;
+}
+
+/* Custom scrollbar with Gruvbox theme */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #282828;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #504945;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #665c54;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+/* Selection color */
+::selection {
+  background-color: rgba(250, 189, 47, 0.2);
+  color: #fbf1c7;
+}
+
+/* Focus styles for accessibility */
+:focus-visible {
+  outline: 2px solid #fabd2f;
+  outline-offset: 2px;
+}
+
+/* Typography baseline */
+body {
+  @apply bg-gruvbox-bg text-gruvbox-fg font-sans antialiased;
+  line-height: 1.6;
+  counter-reset: section;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply text-gruvbox-fg0 font-bold;
+}
+
+a {
+  @apply text-gruvbox-yellow hover:text-gruvbox-orange transition-colors;
+}
+
+/* Section spacing */
+section {
+  @apply py-section px-6;
+}
+
+/* Container */
+.container {
+  @apply max-w-container mx-auto;
+}
+
+/* Numbered headings (Brittany's style) */
+.numbered-heading {
+  @apply flex items-center text-3xl font-bold mb-10;
+}
+
+.numbered-heading::before {
+  content: "0" counter(section) ".";
+  counter-increment: section;
+  @apply text-gruvbox-yellow font-mono text-xl mr-4;
+}
+
+/* Link underline effect */
+.link-underline {
+  @apply relative;
+}
+
+.link-underline::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-0 h-0.5 bg-gruvbox-yellow transition-all duration-300;
+}
+
+.link-underline:hover::after {
+  @apply w-full;
+}

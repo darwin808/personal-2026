@@ -1,0 +1,21 @@
+---
+interface Props {
+  platform: string;
+  url: string;
+  icon: string;
+}
+
+const { platform, url, icon } = Astro.props;
+---
+
+<a
+  href={url}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="text-gruvbox-fg2 hover:text-gruvbox-yellow hover:translate-y-[-3px] transition-all duration-300 inline-block"
+  aria-label={platform}
+>
+  <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <use href={`${icon}#icon`} />
+  </svg>
+</a>
