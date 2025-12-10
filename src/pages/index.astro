@@ -126,11 +126,9 @@ const pageDescription =
     mix-blend-mode: screen;
   }
 
-  @media (prefers-color-scheme: light) {
-    .mouse-glow {
-      mix-blend-mode: multiply;
-      opacity: 0.6;
-    }
+  html[data-theme='light'] .mouse-glow {
+    mix-blend-mode: multiply;
+    opacity: 1;
   }
 
   .nav-indicator {
@@ -154,14 +152,24 @@ const pageDescription =
 <script>
   // Mouse glow effect
   const mouseGlow = document.querySelector('.mouse-glow') as HTMLElement;
+  const html = document.documentElement;
 
-  document.addEventListener('mousemove', (e) => {
-    const x = e.clientX;
-    const y = e.clientY;
+  const updateMouseGlow = (x: number, y: number) => {
+    if (!mouseGlow) return;
 
-    if (mouseGlow) {
+    const isLightMode = html.getAttribute('data-theme') === 'light';
+
+    if (isLightMode) {
+      // More visible in light mode with darker yellow/orange
+      mouseGlow.style.background = `radial-gradient(600px circle at ${x}px ${y}px, rgba(215, 153, 33, 0.25), rgba(215, 153, 33, 0.12) 40%, transparent 70%)`;
+    } else {
+      // Original dark mode glow
       mouseGlow.style.background = `radial-gradient(800px circle at ${x}px ${y}px, rgba(250, 189, 47, 0.15), rgba(250, 189, 47, 0.05) 40%, transparent 80%)`;
     }
+  };
+
+  document.addEventListener('mousemove', (e) => {
+    updateMouseGlow(e.clientX, e.clientY);
   });
 
   // Active nav on scroll
