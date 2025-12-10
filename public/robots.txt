@@ -5,7 +5,6 @@ Allow: /
 
 # Sitemaps
 Sitemap: https://darwinapolinario.xyz/sitemap.xml
-Sitemap: https://darwinapolinario.xyz/sitemap-0.xml
 
 # Crawl-delay
 Crawl-delay: 0
