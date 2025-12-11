@@ -3,7 +3,6 @@ import { getCollection } from 'astro:content';
 
 const projects = await getCollection('projects');
 const featuredProjects = projects
-  .filter((project) => project.data.featured)
   .sort((a, b) => a.data.order - b.data.order);
 const project_links = "https://github.com/darwin808"
 ---
