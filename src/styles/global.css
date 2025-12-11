@@ -29,6 +29,10 @@
   --color-gruvbox-purple: #d3869b;
   --color-gruvbox-aqua: #8ec07c;
   --color-gruvbox-orange: #fe8019;
+
+  /* Enhanced card backgrounds for better contrast */
+  --color-card-bg: #2a2e30;
+  --color-card-border: rgba(254, 128, 25, 0.15);
 }
 
 /* Light theme */
@@ -51,6 +55,10 @@ html[data-theme='light'] {
   --color-gruvbox-purple: #b16286;
   --color-gruvbox-aqua: #689d6a;
   --color-gruvbox-orange: #d65d0e;
+
+  /* Enhanced card backgrounds for better contrast */
+  --color-card-bg: #f2e5bc;
+  --color-card-border: rgba(214, 93, 14, 0.2);
 }
 
 /* Custom scrollbar with Gruvbox theme */

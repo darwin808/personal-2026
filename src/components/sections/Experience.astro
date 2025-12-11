@@ -17,8 +17,8 @@ const resume_link = "https://docs.google.com/document/d/1X-wXv4PuaIcVk-UrgMPfB2E
     <ol class="group/list">
       {sortedExperiences.map((exp) => (
         <li class="mb-12">
-          <div class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-            <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition-all duration-300 motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-gruvbox-bg1/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(250,189,47,0.1)] lg:group-hover:drop-shadow-lg lg:group-hover:scale-[1.02]"></div>
+          <div class="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 lg:hover:!opacity-100 lg:group-hover/list:opacity-80">
+            <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition-all duration-300 motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-[var(--color-card-bg)] lg:group-hover:shadow-[inset_0_1px_0_0_var(--color-card-border)] lg:group-hover:drop-shadow-lg lg:group-hover:scale-[1.02]"></div>
 
             <header class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-gruvbox-gray sm:col-span-2" aria-label={exp.data.dateRange}>
               {exp.data.dateRange}
@@ -28,7 +28,7 @@ const resume_link = "https://docs.google.com/document/d/1X-wXv4PuaIcVk-UrgMPfB2E
               <h3 class="font-medium leading-snug text-gruvbox-fg">
                 <div>
                   <a
-                    class="inline-flex items-baseline font-medium leading-tight text-gruvbox-fg hover:text-gruvbox-yellow focus-visible:text-gruvbox-yellow group/link text-base"
+                    class="inline-flex items-baseline font-medium leading-tight text-gruvbox-fg0 hover:text-gruvbox-orange focus-visible:text-gruvbox-orange group/link text-base"
                     href={exp.data.url}
                     target="_blank"
                     rel="noreferrer noopener"
@@ -55,7 +55,7 @@ const resume_link = "https://docs.google.com/document/d/1X-wXv4PuaIcVk-UrgMPfB2E
               <ul class="mt-2 flex flex-wrap" aria-label="Technologies used">
                 {exp.data.technologies.map((tech) => (
                   <li class="mr-1.5 mt-2">
-                    <div class="flex items-center rounded-full bg-gruvbox-aqua/10 px-3 py-1 text-xs font-medium leading-5 text-gruvbox-aqua transition-all duration-200 hover:bg-gruvbox-aqua/20 hover:scale-105 hover:-translate-y-0.5 cursor-default">
+                    <div class="flex items-center rounded-full bg-gruvbox-aqua/[0.15] px-3 py-1 text-xs font-medium leading-5 text-gruvbox-aqua transition-all duration-200 hover:bg-gruvbox-aqua/[0.25] hover:scale-105 hover:-translate-y-0.5 cursor-default ring-1 ring-gruvbox-aqua/30">
                       {tech}
                     </div>
                   </li>
