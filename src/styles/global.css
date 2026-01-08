@@ -107,6 +107,18 @@ body {
   @apply bg-gruvbox-bg text-gruvbox-fg font-sans antialiased;
   line-height: 1.6;
   counter-reset: section;
+  /* Safe area insets for notched phones */
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+  /* Prevent horizontal overflow */
+  overflow-x: hidden;
+}
+
+/* Add bottom padding for mobile nav on small screens */
+@media (max-width: 1023px) {
+  body {
+    padding-bottom: calc(70px + env(safe-area-inset-bottom));
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {

@@ -4,6 +4,7 @@ import About from '@components/sections/About.astro';
 import Experience from '@components/sections/Experience.astro';
 import Projects from '@components/sections/Projects.astro';
 import ThemeToggle from '@components/ui/ThemeToggle.astro';
+import MobileNav from '@components/ui/MobileNav.astro';
 import { SOCIAL_LINKS } from '@utils/constants';
 
 const pageTitle = 'Darwin Apolinario - Full-Stack Software Engineer, AI Developer & Tech Expert';
@@ -13,12 +14,13 @@ const pageDescription =
 
 <BaseLayout title={pageTitle} description={pageDescription}>
   <ThemeToggle />
+  <MobileNav />
   <div class="mouse-glow"></div>
 
   <div class="mx-auto max-w-screen-xl lg:flex lg:justify-between lg:gap-4">
     <!-- Left Sidebar - Sticky -->
     <header
-      class="px-6 py-12 lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:px-12 lg:pt-34 lg:pb-24"
+      class="px-6 py-8 lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:px-12 lg:pt-34 lg:pb-24"
     >
       <div>
         <h1 class="text-gruvbox-fg0 text-4xl font-bold tracking-tight sm:text-5xl">
@@ -82,15 +84,15 @@ const pageDescription =
       </div>
 
       <!-- Social Links -->
-      <ul class="mt-8 flex items-center gap-5" aria-label="Social media">
+      <ul class="mt-6 flex items-center gap-1" aria-label="Social media">
         {
           SOCIAL_LINKS.map((social) => (
-            <li class="text-xs">
+            <li>
               <a
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="text-gruvbox-fg3 hover:text-gruvbox-yellow block transition-all duration-200 hover:-translate-y-1 hover:scale-110"
+                class="text-gruvbox-fg3 hover:text-gruvbox-yellow flex items-center justify-center w-12 h-12 rounded-lg transition-all duration-200 hover:-translate-y-1 hover:bg-gruvbox-bg1/30 active:scale-95"
                 aria-label={social.platform}
               >
                 <svg
@@ -135,14 +137,14 @@ const pageDescription =
     </header>
 
     <!-- Right Content - Scrollable -->
-    <main id="content" class="px-6 lg:w-1/2 lg:px-12 lg:py-8">
+    <main id="content" class="px-6 pt-4 lg:w-1/2 lg:px-12 lg:py-8">
       <About />
       <Experience />
       <Projects />
 
-      <footer class="mt-24 pb-16">
+      <footer class="mt-16 pb-8 lg:mt-24 lg:pb-16">
         <p class="text-gruvbox-fg3 text-sm">
-          &copy; {new Date().getFullYear() - 2} Darwin Apolinario. All rights reserved.
+          &copy; 2023 Darwin Apolinario. All rights reserved.
         </p>
       </footer>
     </main>
@@ -186,9 +188,18 @@ const pageDescription =
 </style>
 
 <script>
-  // Mouse glow effect
+  // Mouse glow effect - disabled on touch devices
   const mouseGlow = document.querySelector('.mouse-glow') as HTMLElement;
   const html = document.documentElement;
+
+  // Detect if device primarily uses touch
+  const isTouchDevice = () => {
+    return (
+      'ontouchstart' in window ||
+      navigator.maxTouchPoints > 0 ||
+      window.matchMedia('(pointer: coarse)').matches
+    );
+  };
 
   const updateMouseGlow = (x: number, y: number) => {
     if (!mouseGlow) return;
@@ -204,9 +215,17 @@ const pageDescription =
     }
   };
 
-  document.addEventListener('mousemove', (e) => {
-    updateMouseGlow(e.clientX, e.clientY);
-  });
+  // Only enable mouse glow on non-touch devices
+  if (!isTouchDevice()) {
+    document.addEventListener('mousemove', (e) => {
+      updateMouseGlow(e.clientX, e.clientY);
+    });
+  } else {
+    // Hide the glow element entirely on touch devices
+    if (mouseGlow) {
+      mouseGlow.style.display = 'none';
+    }
+  }
 
   // Active nav on scroll
   const sections = document.querySelectorAll('section[id]');
