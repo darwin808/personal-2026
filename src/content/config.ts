@@ -26,7 +26,18 @@ const projectsCollection = defineCollection({
   }),
 });
 
+const writingCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    date: z.date(),
+    order: z.number(),
+  }),
+});
+
 export const collections = {
   experience: experienceCollection,
   projects: projectsCollection,
+  writing: writingCollection,
 };

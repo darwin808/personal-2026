@@ -3,6 +3,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 import About from '@components/sections/About.astro';
 import Experience from '@components/sections/Experience.astro';
 import Projects from '@components/sections/Projects.astro';
+import Writing from '@components/sections/Writing.astro';
 import ThemeToggle from '@components/ui/ThemeToggle.astro';
 import MobileNav from '@components/ui/MobileNav.astro';
 import { SOCIAL_LINKS } from '@utils/constants';
@@ -79,6 +80,20 @@ const pageDescription =
                 >
               </a>
             </li>
+            <li>
+              <a
+                class="group flex items-center py-3 transition-transform hover:translate-x-1"
+                href="#writing"
+              >
+                <span
+                  class="nav-indicator bg-gruvbox-gray group-hover:bg-gruvbox-yellow mr-4 h-px w-8 transition-all duration-300 group-hover:w-16"
+                ></span>
+                <span
+                  class="nav-text text-gruvbox-gray group-hover:text-gruvbox-yellow text-xs font-bold tracking-widest uppercase transition-colors duration-300"
+                  >Writing</span
+                >
+              </a>
+            </li>
           </ul>
         </nav>
       </div>
@@ -141,6 +156,7 @@ const pageDescription =
       <About />
       <Experience />
       <Projects />
+      <Writing />
 
       <footer class="mt-16 pb-8 lg:mt-24 lg:pb-16">
         <p class="text-gruvbox-fg3 text-sm">

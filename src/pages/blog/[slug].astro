@@ -1,0 +1,133 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('writing');
+  return posts.map((post) => ({
+    params: { slug: post.id.replace(/\.md$/, '') },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+const formattedDate = post.data.date.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+
+const pageTitle = `${post.data.title} | Darwin Apolinario`;
+const pageDescription = post.data.description;
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} article={true}>
+  <div class="mouse-glow"></div>
+
+  <article class="mx-auto max-w-3xl px-6 py-12 lg:py-20">
+    <a
+      href="/"
+      class="group mb-8 inline-flex items-center text-sm font-medium text-gruvbox-yellow hover:text-gruvbox-orange transition-colors"
+    >
+      <svg
+        class="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M19 12H5"></path>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+      Back to Home
+    </a>
+
+    <header class="mb-12">
+      <time
+        datetime={post.data.date.toISOString()}
+        class="text-sm font-mono text-gruvbox-gray"
+      >
+        {formattedDate}
+      </time>
+      <h1 class="mt-3 text-3xl font-bold text-gruvbox-fg0 leading-tight sm:text-4xl lg:text-5xl">
+        {post.data.title}
+      </h1>
+      <p class="mt-4 text-lg text-gruvbox-fg3 leading-relaxed">
+        {post.data.description}
+      </p>
+    </header>
+
+    <div class="prose-gruvbox">
+      <Content />
+    </div>
+
+    <footer class="mt-16 border-t border-gruvbox-bg2 pt-8">
+      <a
+        href="/"
+        class="group inline-flex items-center text-sm font-medium text-gruvbox-yellow hover:text-gruvbox-orange transition-colors"
+      >
+        <svg
+          class="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M19 12H5"></path>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to all posts
+      </a>
+    </footer>
+  </article>
+</BaseLayout>
+
+<style>
+  .mouse-glow {
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 30;
+    transition: opacity 0.3s;
+    mix-blend-mode: screen;
+  }
+
+  html[data-theme='light'] .mouse-glow {
+    mix-blend-mode: multiply;
+    opacity: 1;
+  }
+</style>
+
+<script>
+  const mouseGlow = document.querySelector('.mouse-glow') as HTMLElement;
+  const html = document.documentElement;
+
+  const isTouchDevice = () => {
+    return (
+      'ontouchstart' in window ||
+      navigator.maxTouchPoints > 0 ||
+      window.matchMedia('(pointer: coarse)').matches
+    );
+  };
+
+  if (!isTouchDevice()) {
+    document.addEventListener('mousemove', (e) => {
+      if (!mouseGlow) return;
+      const isLightMode = html.getAttribute('data-theme') === 'light';
+      if (isLightMode) {
+        mouseGlow.style.background = `radial-gradient(600px circle at ${e.clientX}px ${e.clientY}px, rgba(215, 153, 33, 0.25), rgba(215, 153, 33, 0.12) 40%, transparent 70%)`;
+      } else {
+        mouseGlow.style.background = `radial-gradient(800px circle at ${e.clientX}px ${e.clientY}px, rgba(250, 189, 47, 0.15), rgba(250, 189, 47, 0.05) 40%, transparent 80%)`;
+      }
+    });
+  } else if (mouseGlow) {
+    mouseGlow.style.display = 'none';
+  }
+</script>

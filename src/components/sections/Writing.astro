@@ -27,7 +27,7 @@ const sortedPosts = posts.sort((a, b) => a.data.order - b.data.order);
               <h3>
                 <a
                   class="inline-flex items-baseline font-medium leading-tight text-gruvbox-fg hover:text-gruvbox-yellow focus-visible:text-gruvbox-yellow group/link text-base"
-                  href={`/blog/${post.data.slug}`}
+                  href={`/blog/${post.id.replace(/\.md$/, '')}`}
                   aria-label={post.data.title}
                 >
                   <span class="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
