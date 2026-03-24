@@ -1,0 +1,139 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('writing');
+const sortedPosts = posts.sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
+
+const pageTitle = 'Blog | Darwin Apolinario';
+const pageDescription =
+  'Thoughts on tech, finance, crypto, and personal development. Deep dives on topics that matter — backed by data, not hype.';
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <div class="mouse-glow"></div>
+
+  <div class="mx-auto max-w-3xl px-6 py-12 lg:py-20">
+    <a
+      href="/"
+      class="group mb-12 inline-flex items-center text-sm font-medium text-gruvbox-yellow hover:text-gruvbox-orange transition-colors"
+    >
+      <svg
+        class="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M19 12H5"></path>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+      Back to Home
+    </a>
+
+    <header class="mb-16">
+      <h1 class="text-4xl font-bold text-gruvbox-fg0 sm:text-5xl">Blog</h1>
+      <p class="mt-4 text-lg text-gruvbox-fg3 leading-relaxed max-w-xl">
+        Deep dives on tech, finance, crypto, and things I find interesting — backed by data, not hype.
+      </p>
+    </header>
+
+    <ul class="space-y-2">
+      {sortedPosts.map((post) => {
+        const formattedDate = post.data.date.toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'short',
+          day: 'numeric',
+        });
+        const slug = post.id.replace(/\.md$/, '');
+
+        return (
+          <li>
+            <a
+              href={`/blog/${slug}`}
+              class="group flex flex-col gap-2 rounded-lg p-5 -mx-5 transition-all duration-200 hover:bg-gruvbox-bg1/40 sm:flex-row sm:items-baseline sm:gap-6"
+            >
+              <time
+                datetime={post.data.date.toISOString()}
+                class="shrink-0 text-sm font-mono text-gruvbox-gray sm:w-28"
+              >
+                {formattedDate}
+              </time>
+
+              <div class="min-w-0">
+                <h2 class="text-lg font-semibold text-gruvbox-fg0 group-hover:text-gruvbox-yellow transition-colors leading-snug">
+                  {post.data.title}
+                  <svg
+                    class="inline-block ml-1 h-4 w-4 shrink-0 translate-y-px opacity-0 transition-all group-hover:opacity-100 group-hover:translate-x-1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </h2>
+                <p class="mt-1 text-sm text-gruvbox-fg3 leading-relaxed line-clamp-2">
+                  {post.data.description}
+                </p>
+              </div>
+            </a>
+          </li>
+        );
+      })}
+    </ul>
+  </div>
+</BaseLayout>
+
+<style>
+  .mouse-glow {
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 30;
+    transition: opacity 0.3s;
+    mix-blend-mode: screen;
+  }
+
+  html[data-theme='light'] .mouse-glow {
+    mix-blend-mode: multiply;
+    opacity: 1;
+  }
+</style>
+
+<script>
+  const mouseGlow = document.querySelector('.mouse-glow') as HTMLElement;
+  const html = document.documentElement;
+
+  const isTouchDevice = () => {
+    return (
+      'ontouchstart' in window ||
+      navigator.maxTouchPoints > 0 ||
+      window.matchMedia('(pointer: coarse)').matches
+    );
+  };
+
+  if (!isTouchDevice()) {
+    document.addEventListener('mousemove', (e) => {
+      if (!mouseGlow) return;
+      const isLightMode = html.getAttribute('data-theme') === 'light';
+      if (isLightMode) {
+        mouseGlow.style.background = `radial-gradient(600px circle at ${e.clientX}px ${e.clientY}px, rgba(215, 153, 33, 0.25), rgba(215, 153, 33, 0.12) 40%, transparent 70%)`;
+      } else {
+        mouseGlow.style.background = `radial-gradient(800px circle at ${e.clientX}px ${e.clientY}px, rgba(250, 189, 47, 0.15), rgba(250, 189, 47, 0.05) 40%, transparent 80%)`;
+      }
+    });
+  } else if (mouseGlow) {
+    mouseGlow.style.display = 'none';
+  }
+</script>
