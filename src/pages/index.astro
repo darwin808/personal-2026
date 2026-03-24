@@ -250,13 +250,18 @@ const pageDescription =
   const updateActiveNav = () => {
     let current = '';
 
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.clientHeight;
-      if (window.scrollY >= sectionTop - 200) {
-        current = section.getAttribute('id') || '';
-      }
-    });
+    // If scrolled to the bottom, activate the last section
+    const atBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 100;
+    if (atBottom && sections.length > 0) {
+      current = sections[sections.length - 1].getAttribute('id') || '';
+    } else {
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        if (window.scrollY >= sectionTop - 200) {
+          current = section.getAttribute('id') || '';
+        }
+      });
+    }
 
     // If no section is active (at top of page), default to first section
     if (!current && sections.length > 0) {
