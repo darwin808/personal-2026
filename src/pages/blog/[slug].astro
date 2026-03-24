@@ -11,7 +11,7 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
-const { Content } = await post.render();
+const { Content, remarkPluginFrontmatter } = await post.render();
 
 const formattedDate = post.data.date.toLocaleDateString('en-US', {
   year: 'numeric',
@@ -19,31 +19,79 @@ const formattedDate = post.data.date.toLocaleDateString('en-US', {
   day: 'numeric',
 });
 
+const slug = post.id.replace(/\.md$/, '');
 const pageTitle = `${post.data.title} | Darwin Apolinario`;
 const pageDescription = post.data.description;
+const canonicalURL = `https://darwinapolinario.xyz/blog/${slug}`;
+
+const articleJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": post.data.title,
+  "description": post.data.description,
+  "datePublished": post.data.date.toISOString(),
+  "dateModified": post.data.date.toISOString(),
+  "author": {
+    "@type": "Person",
+    "name": "Darwin Apolinario",
+    "url": "https://darwinapolinario.xyz"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Darwin Apolinario",
+    "url": "https://darwinapolinario.xyz"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": canonicalURL
+  },
+  "url": canonicalURL,
+  "image": "https://darwinapolinario.xyz/og-image.jpg",
+  "inLanguage": "en-US"
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://darwinapolinario.xyz"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://darwinapolinario.xyz/blog"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": post.data.title,
+      "item": canonicalURL
+    }
+  ]
+};
 ---
 
-<BaseLayout title={pageTitle} description={pageDescription} article={true}>
+<BaseLayout title={pageTitle} description={pageDescription} article={true} publishDate={post.data.date}>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(articleJsonLd)} />
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(breadcrumbJsonLd)} />
+
   <div class="mouse-glow"></div>
 
   <article class="mx-auto max-w-3xl px-6 py-12 lg:py-20">
-    <a
-      href="/"
-      class="group mb-8 inline-flex items-center text-sm font-medium text-gruvbox-yellow hover:text-gruvbox-orange transition-colors"
-    >
-      <svg
-        class="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
-        <path d="M19 12H5"></path>
-        <polyline points="12 19 5 12 12 5"></polyline>
-      </svg>
-      Back to Home
-    </a>
+    <nav aria-label="Breadcrumb" class="mb-8">
+      <ol class="flex items-center gap-2 text-sm text-gruvbox-gray">
+        <li><a href="/" class="hover:text-gruvbox-yellow transition-colors">Home</a></li>
+        <li><span class="mx-1">/</span></li>
+        <li><a href="/blog" class="hover:text-gruvbox-yellow transition-colors">Blog</a></li>
+        <li><span class="mx-1">/</span></li>
+        <li class="text-gruvbox-fg3 truncate max-w-[200px]">{post.data.title}</li>
+      </ol>
+    </nav>
 
     <header class="mb-12">
       <time
@@ -66,7 +114,7 @@ const pageDescription = post.data.description;
 
     <footer class="mt-16 border-t border-gruvbox-bg2 pt-8">
       <a
-        href="/"
+        href="/blog"
         class="group inline-flex items-center text-sm font-medium text-gruvbox-yellow hover:text-gruvbox-orange transition-colors"
       >
         <svg
