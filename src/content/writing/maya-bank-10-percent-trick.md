@@ -1,13 +1,13 @@
 ---
 title: "The Maya Bank 10% Trick That Traditional Banks Don't Want You to Know"
-description: "How to earn 10% interest per year on your savings using Maya Bank Philippines — without spending a single peso. A step-by-step guide to the Lazada cashflow hack."
+description: "How to earn 10% interest with daily accrual on your savings using Maya Bank Philippines — without spending a single peso. Step-by-step Lazada cashflow hack guide."
 date: 2026-03-24
 order: 1
 ---
 
 Your traditional bank is paying you **0.125% interest** per year. That means your hard-earned ₱100,000 is making you a grand total of... ₱125. Per year. That's not even enough for a decent lunch.
 
-Meanwhile, there's a digital bank in the Philippines quietly giving **10% per year** — and people are getting it **without actually spending anything**.
+Meanwhile, there's a digital bank in the Philippines quietly giving **10% per year — with interest that accrues daily**. You literally watch your money grow every single day. And people are getting this rate **without actually spending anything**.
 
 Let me show you how.
 
@@ -50,7 +50,7 @@ Open your Lazada app and **cash in ₱35,000 from your Maya Wallet to your Lazad
 
 ### Step 3: Wait for Confirmation
 
-Maya's system registers this transfer as a "qualifying spend" of ₱35,000. You'll get an SMS confirmation within about 10 minutes. Your interest rate just jumped from 3.5% to **~10% per year**.
+Maya's system registers this transfer as a "qualifying spend" of ₱35,000. You'll get an SMS confirmation within about 10 minutes. Your interest rate just jumped from 3.5% to **~10% per year — accruing daily**. That means you'll see your balance tick up every single day in the app.
 
 ### Step 4: Transfer It Back
 
@@ -58,9 +58,11 @@ Withdraw the ₱35,000 from Lazada Wallet back to Maya. The first withdrawal per
 
 ### The Result
 
-Your money went out and came right back. **Net cost: ₱0.** But Maya now treats you as a Tier 3 spender, and your savings interest is sitting at roughly **10% per year**.
+Your money went out and came right back. **Net cost: ₱0.** But Maya now treats you as a Tier 3 spender, and your savings interest is sitting at roughly **10% per year, computed and credited daily**. Open the app tomorrow morning and you'll already see your first interest credit.
 
 > **Important:** This works because Maya counts wallet-to-wallet transfers as qualifying transactions. As of early 2026, this method is still confirmed working by thousands of users in Filipino fintech communities.
+
+> **One catch:** Your boost resets at the end of every month. That means you need to **repeat this trick on the 1st day of each month** to keep your 10% rate active. Set a monthly reminder — it takes less than 5 minutes and costs ₱0. Think of it as a 5-minute monthly ritual that earns you thousands in interest.
 
 ## Let's Talk Numbers
 
@@ -85,10 +87,10 @@ If you earn ₱30,000/month and save 10% (₱3,000) in Maya with the boosted rat
 - **Traditional bank:** You'd earn about ₱3.75 in interest per year
 - **Maya at 10%:** You'd earn about ₱300 per year
 
-Not life-changing money, but it's the habit that matters. And Maya makes it easy:
+Not life-changing money, but it's the **habit** that matters. And Maya makes it addictive:
 
 1. **Auto-transfer** 10% of your salary on payday
-2. **Watch your interest grow daily** (Maya shows daily accrual, not quarterly)
+2. **Watch your interest hit daily** — Maya computes and credits interest every single day, not quarterly like traditional banks. You'll check your app every morning just to see it grow. It's like a game.
 3. **Use Personal Goals** to name your savings ("Emergency Fund", "Travel Fund")
 4. **Stack it** — Maya lets you open up to 5 Personal Goals accounts earning 4-8% each
 
