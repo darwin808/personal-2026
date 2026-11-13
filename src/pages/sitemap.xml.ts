@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 
 export const GET: APIRoute = async ({ site }) => {
   const posts = await getCollection('writing');
-  const siteUrl = site?.toString().replace(/\/$/, '') || 'https://darwinapolinario.xyz';
+  const siteUrl = site?.toString().replace(/\/$/, '') || 'https://www.darwinapolinario.xyz';
 
   const blogEntries = posts
     .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())

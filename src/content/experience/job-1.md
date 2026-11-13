@@ -2,7 +2,7 @@
 company: "Freelance"
 position: "Full-Stack Software Engineer & AI Developer"
 dateRange: "Nov 2024 - Present"
-url: "https://darwinapolinario.xyz"
+url: "https://www.darwinapolinario.xyz"
 technologies: ["TypeScript", "Next.js", "React", "Node.js", "AWS", "OpenAI API", "Vercel", "Tailwind CSS"]
 order: 1
 ---

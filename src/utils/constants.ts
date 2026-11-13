@@ -23,7 +23,7 @@ export const SOCIAL_LINKS = [
   },
   {
     platform: 'Website',
-    url: 'https://darwinapolinario.xyz',
+    url: 'https://www.darwinapolinario.xyz',
     icon: '/src/assets/icons/external.svg',
   },
 ];

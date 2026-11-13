@@ -22,7 +22,7 @@ const formattedDate = post.data.date.toLocaleDateString('en-US', {
 const slug = post.id.replace(/\.md$/, '');
 const pageTitle = `${post.data.title} | Darwin Apolinario`;
 const pageDescription = post.data.description;
-const canonicalURL = `https://darwinapolinario.xyz/blog/${slug}`;
+const canonicalURL = `https://www.darwinapolinario.xyz/blog/${slug}`;
 
 const articleJsonLd = {
   "@context": "https://schema.org",
@@ -34,19 +34,19 @@ const articleJsonLd = {
   "author": {
     "@type": "Person",
     "name": "Darwin Apolinario",
-    "url": "https://darwinapolinario.xyz"
+    "url": "https://www.darwinapolinario.xyz"
   },
   "publisher": {
     "@type": "Person",
     "name": "Darwin Apolinario",
-    "url": "https://darwinapolinario.xyz"
+    "url": "https://www.darwinapolinario.xyz"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": canonicalURL
   },
   "url": canonicalURL,
-  "image": "https://darwinapolinario.xyz/og-image.jpg",
+  "image": "https://www.darwinapolinario.xyz/og-image.jpg",
   "inLanguage": "en-US"
 };
 
@@ -58,13 +58,13 @@ const breadcrumbJsonLd = {
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://darwinapolinario.xyz"
+      "item": "https://www.darwinapolinario.xyz"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Blog",
-      "item": "https://darwinapolinario.xyz/blog"
+      "item": "https://www.darwinapolinario.xyz/blog"
     },
     {
       "@type": "ListItem",
