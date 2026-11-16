@@ -120,7 +120,7 @@ Job description and achievements...
 
 ## Theme Customization
 
-Colors and theme variables are defined in `src/styles/global.css`:
+Colors and themes variables are defined in `src/styles/global.css`:
 
 - Dark theme (default): Gruvbox dark palette
 - Light theme: Gruvbox light palette
