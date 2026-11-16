@@ -89,12 +89,12 @@ Create a new markdown file in `src/content/projects/`:
 
 ```markdown
 ---
-title: "Project Name"
-description: "Brief description"
+title: 'Project Name'
+description: 'Brief description'
 order: 1
-technologies: ["TypeScript", "React", "Node.js"]
-githubUrl: "https://github.com/..."
-liveUrl: "https://..."
+technologies: ['TypeScript', 'React', 'Node.js']
+githubUrl: 'https://github.com/...'
+liveUrl: 'https://...'
 featured: true
 ---
 
@@ -107,12 +107,12 @@ Create a new markdown file in `src/content/experience/`:
 
 ```markdown
 ---
-company: "Company Name"
-position: "Job Title"
-dateRange: "Jan 2023 - Present"
-url: "https://company.com"
+company: 'Company Name'
+position: 'Job Title'
+dateRange: 'Jan 2023 - Present'
+url: 'https://company.com'
 order: 1
-technologies: ["Tech1", "Tech2"]
+technologies: ['Tech1', 'Tech2']
 ---
 
 Job description and achievements...
@@ -128,13 +128,13 @@ Colors and theme variables are defined in `src/styles/global.css`:
 
 ## Commands
 
-| Command           | Action                                      |
-| :---------------- | :------------------------------------------ |
-| `npm install`     | Install dependencies                        |
-| `npm run dev`     | Start dev server at `localhost:4321`        |
-| `npm run build`   | Build production site to `./dist/`          |
-| `npm run preview` | Preview production build locally            |
-| `npm run astro`   | Run Astro CLI commands                      |
+| Command           | Action                               |
+| :---------------- | :----------------------------------- |
+| `npm install`     | Install dependencies                 |
+| `npm run dev`     | Start dev server at `localhost:4321` |
+| `npm run build`   | Build production site to `./dist/`   |
+| `npm run preview` | Preview production build locally     |
+| `npm run astro`   | Run Astro CLI commands               |
 
 ## License
 
